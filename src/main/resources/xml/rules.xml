@@ -1,0 +1,8 @@
+<rules>
+	<rule key="NAME_PACKAGE_INCORRECT">
+    <priority>MAJOR</priority>
+    <name><![CDATA[Nome da package esta incorreto]]></name>
+    <configKey><![CDATA[NAME_PACKAGE_INCORRECT]]></configKey>
+    <tag>bug</tag>
+  </rule>
+</rules>
