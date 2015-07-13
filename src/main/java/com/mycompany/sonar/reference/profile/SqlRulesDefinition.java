@@ -23,7 +23,6 @@ public class SqlRulesDefinition implements RulesDefinition {
 	  RulesDefinitionXmlLoader ruleLoader = new RulesDefinitionXmlLoader();
 	  ruleLoader.load(repository, SqlRulesDefinition.class.getResourceAsStream("/xml/rules.xml"), "UTF-8");
 	  ExternalDescriptionLoader.loadHtmlDescriptions(repository, "/org/sonar/l10n/views");
-	  //SqaleXmlLoader.load(repository, "/com/sonar/sqale/sql-model.xml");
 	  
 	  repository.done();
   }
