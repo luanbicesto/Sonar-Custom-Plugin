@@ -7,7 +7,7 @@ import org.sonar.squidbridge.rules.ExternalDescriptionLoader;
 public class SqlRulesDefinition implements RulesDefinition {
 
 	public static final String REPOSITORY_KEY = "sql_repository";
-	public static final String REPOSITORY_NAME = "SQL_Repository_2";
+	public static final String REPOSITORY_NAME = "SQL_Repository";
 	
 	public SqlRulesDefinition(){
 		
@@ -16,7 +16,7 @@ public class SqlRulesDefinition implements RulesDefinition {
   @Override
   public void define(Context context) {
 	  NewRepository repository = context
-		      .createRepository(REPOSITORY_KEY, "sql")
+		      .createRepository(REPOSITORY_KEY, SqlLanguage.KEY)
 		      .setName(REPOSITORY_NAME);
 
     

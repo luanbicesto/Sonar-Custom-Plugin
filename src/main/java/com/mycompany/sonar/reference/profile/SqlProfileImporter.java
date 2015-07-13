@@ -16,7 +16,7 @@ public class SqlProfileImporter extends ProfileImporter {
 	private static final Logger LOG = LoggerFactory.getLogger(SqlProfileImporter.class);
 	
 	public SqlProfileImporter(RuleFinder ruleFinder) {
-	    super(SqlRulesDefinition.REPOSITORY_KEY, "SqlProfile2");
+	    super(SqlRulesDefinition.REPOSITORY_KEY, "SqlProfile");
 	    setSupportedLanguages("sql");
 	    this.ruleFinder = ruleFinder;
 	  }
@@ -25,20 +25,13 @@ public class SqlProfileImporter extends ProfileImporter {
 	  public RulesProfile importProfile(Reader findbugsConf, ValidationMessages messages) {
 	    RulesProfile profile = RulesProfile.create();
 	    try {
-	      //XStream xStream = FindBugsFilter.createXStream();
-	      //FindBugsFilter filter = (FindBugsFilter) xStream.fromXML(findbugsConf);
-
-	      //activateRulesByCategory(profile, filter, messages);
-	      //activateRulesByCode(profile, filter, messages);
-	      //activateRulesByPattern(profile, filter, messages);
-
 	    	Rule rule = ruleFinder.findByKey(SqlRulesDefinition.REPOSITORY_KEY, "NAME_PACKAGE_INCORRECT");
 	    	
 	    	if (rule != null) {
 	            profile.activateRule(rule, RulePriority.MAJOR);
-	          } else {
+	        } else {
 	            messages.addWarningText("Unable to activate unknown rule : NAME_PACKAGE_INCORRECT");
-	          }
+	        }
 	        return profile;
 	    } catch (Exception e) {
 	      String errorMessage = "The SqlFindBugs configuration file is not valid";
